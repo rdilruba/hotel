@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<style>
+body {
+background-image:url("b3.jpeg");
+
+}
+#logo
+{
+position: fixed;
+right: 4px;
+bottom: 4px;
+
+}
+h2{
+text-align:center;
+font-family:"Verdana",Sans-serif;
+margin-top: 90px;
+}
+p
+{
+text-align:center;
+}
+input[type=text]
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 100%;
+    background-color: #331f00;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#form
+{
+	display:block;
+	font-family:"Verdana",Sans-serif;
+	margin-left: auto;
+	margin-right:auto;
+	width:30%;
+}
+li
+{
+	float: left;
+}
+li a
+{
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:"Verdana",Sans-serif;
+}
+ul
+{
+	list-style-type: none;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    background-color: #404040;
+ 
+
+}
+li a:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: #ff9900;
+}
+</style>
+
+<title>Müşteri Kayıt Ekranı</title>
+<script src="sehir.js"></script>
+</head>
+<body>
+<div> 
+    
+    <ul> 
+        <li><a href="anasayfa.xhtml">ANASAYFA</a></li> 
+        <li><a class="active" href="musteri_kayit.xhtml">MÜŞTERİ KAYDI</a></li> 
+    </ul> 
+</div>
+<div>
+<h2>Merhaba</h2>
+<p> Yeni müşteri girişi için lütfen aşağıdaki formu doldurunuz. </p>
+</div>
+<form method="post" action="musform" id="form" >
+<div>
+
+<label for="odano"> Oda Numarası:</label>
+<input type="text" name="odano" id="odano" value="#{odanoalma.odano}"></input> <br></br>
+
+Ad: <br></br>
+<input type="text" name="ad" ></input>
+<br></br>
+Soyad: <br></br>
+<input type="text" name="soyad"></input>
+<br></br>
+
+Cinsiyet: <br></br>
+<label for="erkek"> Erkek </label>
+<input type="radio" name="cinsiyet" id="erkek" value="erkek"></input> <br></br>
+<label for="kadın"> Kadın </label>
+<input type="radio" name="cinsiyet" id="kadın" value="kadın"></input> <br></br>
+<label for="diğer"> Diğer </label>
+<input type="radio" name="cinsiyet" id="diğer" value="diğer"></input> <br></br>
+<br></br>
+Adres Tipi: <br></br>
+<label for="ev"> Ev </label>
+<input type="radio" name="adres" id="ev" value="ev"></input> <br></br>
+<label for="is"> İş </label>
+<input type="radio" name="adres" id="is" value="is"></input> <br></br>
+<label for="diger"> Diğer </label>
+<input type="radio" name="adres" id="diger" value="diger"></input> <br></br>
+<input type="text" name="ulke" id="ulke" value="Turkiye" style="visibility:hidden; display:none;"></input>
+<br/>
+<label for="sehir"> Şehir:</label>
+<select id="sehir" name="sehir" > </select>
+<script> my(); </script>
+<br/> <br/>
+<label for="blok"> Blok no:</label>
+<input type="text" name="blok" id="blok"></input>
+<label for="posta"> Posta kodu:</label>
+<input type="text" name="posta" id="posta"></input>
+<br/>
+<label for="tcno"> TC Kimlik Numarası:</label>
+<input type="text" name="tcno" id="tcno"></input> <br></br>
+
+
+<input type="submit" value="Kaydet" onclick="#{tcsorgu.sorgu()}" ></input>
+<img src="logo.png" alt="" height="33" width="271" id="logo"></img>
+</div>
+</form>
+</body>
+</html>

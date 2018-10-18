@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body {
+	background-image: url("b3.jpeg");
+}
+
+#logo {
+	position: absolute;
+	right: 4px;
+	bottom: 4px;
+}
+
+h1 {
+	text-align: center;
+	font-family: "Verdana", Sans-serif;
+	margin-top: 90px;
+}
+
+h3 {
+	text-align: center;
+	margin-top: 22px;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-family: "Verdana", Sans-serif;
+}
+
+ul {
+	list-style-type: none;
+	position: fixed;
+	margin: 0;
+	top: 50;
+	left: 150;
+	width: 100%;
+	padding: 0;
+	background-color: #404040;
+}
+
+li a:hover:not (.active ) {
+	background-color: #111;
+}
+
+.active {
+	background-color: #ff9900;
+}
+
+.b {
+	text-align: center;
+	border-radius: 4px;
+	font-size: 20px;
+	color: white;
+	float: left;
+	width: 260px;
+	white-space:normal;
+	height:100px;
+	background-image: url("buton.jpg");
+	font-family: "Sans-serif", Verdana;
+	font-weight: bold;
+}
+#gir
+{
+	position: absolute;
+	top: 250px;
+	left: 445px;
+}
+#kul
+{
+	position: absolute;
+	top: 250px;
+	left: 725px;
+}
+#oda
+{
+	position: absolute;
+	top: 370px;
+	left: 445px;
+}
+#sor
+{
+	position: absolute;
+	top: 370px;
+	left: 725px;
+}
+#ista
+{
+	position: absolute;
+	top: 490px;
+	left: 585px;
+}
+</style>
+<title>ANASAYFA</title>
+
+<script type="text/javascript">
+
+function myFunction() {
+	
+	var yetki = "#{odanoalma.yetki}";
+	if(yetki === "2")
+		{
+			document.getElementById("ista").style.visibility ="hidden";
+			document.getElementById("ista").style.display ="none";
+			document.getElementById("kul").style.visibility ="hidden";
+			document.getElementById("kul").style.display ="none";
+			document.getElementById("sor").style.visibility ="hidden";
+			document.getElementById("sor").style.display ="none";
+			document.getElementById("gir").style.left ="590px";
+			document.getElementById("oda").style.left ="590px";
+		}
+	if(yetki === "3")
+	{
+		document.getElementById("ista").style.visibility ="hidden";
+		document.getElementById("ista").style.display ="none";
+		document.getElementById("kul").style.visibility ="hidden";
+		document.getElementById("kul").style.display ="none";
+		document.getElementById("oda").style.visibility ="hidden";
+		document.getElementById("oda").style.display ="none";
+		document.getElementById("gir").style.left ="590px";
+		document.getElementById("sor").style.left ="590px";
+	}    
+}
+
+</script>
+
+</head>
+<body>
+	<h1>VAKIFBANK OTEL'E HOŞ GELDİNİZ</h1>
+	<h3>Lütfen menüden yapmak istediğiniz işlemi seçiniz.</h3>
+
+<form action="osorgu" method="post">
+<div>
+<h3>
+<input id="sor" type="submit" class="b" value="ODA KONTROL ve MÜŞTERİ KAYDI" />   
+</h3>
+</div> 
+</form>
+<form action="cikis" method="post">
+	<div>
+  
+		<input id="gir" type="submit" class="b" value="KULLANICI DEĞİŞTİR" />  
+
+	</div>
+</form>
+
+<form action="kontrol_k" method="post">
+	<div>
+
+		<input id="kul" type="submit" class="b" value="KULLANICI TANIMI" />  
+
+	</div>
+</form>
+<form action="kontrol_o" method="post">
+	<div>
+  
+		<input id="oda" type="submit" class="b" value="ODA TANIMI" />  
+
+	</div>
+</form>
+<form action="ista" method="post">
+	<div>
+  
+		<input id="ista" type="submit" class="b" value="İSTATİSTİK" />  
+
+	</div>
+</form>
+	<form>
+    <div>
+    <script type="text/javascript">  myFunction();  </script>
+		<h3>
+		<input id="yetki" name="yetki" value="#{odanoalma.yetki}" style="visibility:hidden;"/>
+		</h3> 
+	</div>
+    </form>
+
+	<div> 
+		<img src="logo.png" alt="logo" height="33" width="271" id="logo"></img>
+	</div>
+</body>
+</html>

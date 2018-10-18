@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body {
+background-image:url("b3.jpeg");
+
+}
+h2{
+text-align:center;
+font-family:"Verdana",Sans-serif;
+}
+#button
+{
+    background-color: #555555; 
+    border: none;
+    color: white;
+    padding: 6px 18px;
+    text-align: center;
+    font-size: 16px;
+}
+#form
+{
+	font-family:"Verdana",Sans-serif;
+	text-align:center;
+	display:block;
+	position:absolute;
+	left:40px;
+	margin: auto;
+}
+#logo
+{
+position:absolute;
+left:40px;
+
+}
+</style>
+<title>Giriş</title>
+</head>
+<body>
+<div>
+<br></br><br></br>
+<img src="logo.png" alt="" height="33" width="271" id="logo"></img>
+<br></br><br></br>
+<form action="sifkon" id="form" method="post">
+<div>
+<h3>
+<label for="kadi">Kullanıcı Adı:</label>
+<input type="text" name="kadi" id="kadi" />
+<label for="sifre">Şifre:</label>
+<input type="password" name="sifre" id="sifre" />
+<input id="button" type="submit" value="Giriş" />   
+</h3>
+</div> 
+</form>
+</div>
+</body>
+</html>

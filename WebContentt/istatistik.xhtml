@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body {
+background-image:url("b3.jpeg");
+
+}
+li
+{
+	float: left;
+}
+li a
+{
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:"Verdana",Sans-serif;
+}
+ul
+{
+	list-style-type: none;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    background-color: #404040;
+ 
+
+}
+li a:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: #ff9900;
+}
+#logo
+{
+position: fixed;
+right: 4px;
+bottom: 4px;
+
+}
+h2{
+text-align:center;
+font-family:"Verdana",Sans-serif;
+margin-top: 90px;
+}
+p
+{
+text-align:center;
+}
+
+input[type=submit]{
+    width: 55%;
+    color: white;
+ 	border-style: dotted;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+	margin-right:auto;
+}
+input[type=submit]:hover {
+    background-color: #ff9933;
+}
+
+.hep
+{
+	display:block;
+	font-family:"Verdana",Sans-serif;
+	margin-left: auto;
+	margin-right:auto;
+	border-radius: 5px;
+    background-color: #fff3e6;
+    padding: 60px;
+}
+.container {
+    position: relative;
+    font-family: Arial;
+}
+#b1
+{
+	position: absolute;
+    float: left;
+    bottom: 92px;
+    left: 500px;
+    background-color: black;
+    height:80px;
+    width:160px;
+    color: white;
+    visibility:visible;
+}
+.text-block {
+    position: absolute;
+    float: left;
+    background-color: black;
+    color: white;
+
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<title>İstatistik Ekranı</title>
+
+</head>
+<body>
+
+<div> 
+    <ul> 
+        <li><a  href="anasayfa.xhtml">ANASAYFA</a></li> 
+        <li><a class="active" href="istatistik.xhtml">İSTATİSTİK</a></li> 
+    </ul> 
+</div>
+
+<div class="hep">
+<div class="container">
+ <table>
+  <tr>
+    <th>Oda Tipi</th>
+    <th>Fiyat</th>
+    <th>Sezon</th>
+    <th>Gün</th>
+    <th>Total Fiyat</th>
+  </tr>
+<ui:repeat value="#{dataista.list}" var="ista">
+
+  <tr>
+    <td> <h:outputText value = "#{ista.odatipi}"/></td>
+    <td> <h:outputText value = "#{ista.fiyat}"/></td>
+    <td> <h:outputText value = "#{ista.sezon}"/></td>
+    <td> <h:outputText value = "#{ista.gun}"/></td>
+    <td> <h:outputText value = "#{ista.total}"/></td>
+  </tr>
+ 
+ <br/>
+ </ui:repeat>
+  </table>
+  </div>
+</div>
+ 
+<div><img src="logo.png" alt="" height="33" width="271" id="logo"></img></div>
+</body>
+</html>

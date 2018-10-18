@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body {
+background-image:url("b3.jpeg");
+
+}
+li
+{
+	float: left;
+}
+li a
+{
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:"Verdana",Sans-serif;
+}
+ul
+{
+	list-style-type: none;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    background-color: #404040;
+ 
+
+}
+li a:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: #ff9900;
+}
+#logo
+{
+position: fixed;
+right: 4px;
+bottom: 4px;
+
+}
+h2{
+text-align:center;
+font-family:"Verdana",Sans-serif;
+margin-top: 90px;
+}
+p
+{
+text-align:center;
+}
+
+input[type=submit]{
+    width: 55%;
+    color: white;
+ 	border-style: dotted;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+	margin-right:auto;
+}
+input[type=submit]:hover {
+    background-color: #ff9933;
+}
+#form
+{
+	display:block;
+	font-family:"Verdana",Sans-serif;
+	margin-left: auto;
+	margin-right:auto;
+}
+.hep
+{
+	border-radius: 5px;
+    background-color: #fff3e6;
+    padding: 60px;
+}
+.container {
+    position: relative;
+    font-family: Arial;
+}
+#b1
+{
+	position: absolute;
+    float: left;
+    bottom: 92px;
+    left: 500px;
+    background-color: black;
+    height:80px;
+    width:160px;
+    color: white;
+    visibility:visible;
+}
+.text-block {
+    position: absolute;
+    float: left;
+    bottom: 62px;
+    left: 300px;
+    background-color: black;
+    height:130px;
+    width:140px;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+</style>
+
+<title>Oda Sorgulama Ekranı</title>
+
+</head>
+<body>
+
+<div> 
+    <ul> 
+        <li><a  href="anasayfa.xhtml">ANASAYFA</a></li> 
+        <li><a class="active" href="oda_sorgulama.xhtml">ODA KONTROL VE MÜŞTERİ KAYDI</a></li> 
+    </ul> 
+</div>
+<div class="hep">
+<ui:repeat value="#{datas.list}" var="odam">
+<div class="container">
+  <img  id="stan" src="#{odam.resim}" alt="Standart" height="187" width="280" ></img>
+  <div class="text-block">
+    Oda No:
+     <h:outputText value = "#{odam.odano}"/> <br/>
+    Oda Adı:
+     <h:outputText value = "#{odam.odaadı}"/><br/>
+    Oda Durumu:
+     <h:outputText value = "#{odam.durum}"/><br/>
+    Kapasite:
+     <h:outputText value = "#{odam.kapasite}"/> Kişilik<br/>
+    Oda Tipi:
+     <h:outputText value = "#{odam.tip}"/>   
+  </div>
+  <form id="f" action="oyonet" method="post">
+  <div>
+		<input id="odano" name="odano" value="#{odam.odano}" style="visibility:hidden;"/>
+		<input id="durum" name="durum" value="#{odam.durum}" style="visibility:hidden;"/>
+		<input id="tip" name="tip" value="#{odam.tip}" style="visibility:hidden;"/>
+		
+		<input id="b1" name="is" type="submit" value="#{odam.buton}" />   		
+	</div> 
+</form>
+ <br/>
+</div>
+ </ui:repeat>
+</div>
+ 
+<div><img src="logo.png" alt="" height="33" width="271" id="logo"></img></div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body {
+background-image:url("b3.jpeg");
+
+}
+#logo
+{
+position: fixed;
+right: 4px;
+bottom: 4px;
+
+}
+h2{
+text-align:center;
+font-family:"Verdana",Sans-serif;
+margin-top: 90px;
+}
+p
+{
+text-align:center;
+}
+input[type=text]
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 100%;
+    background-color: #331f00;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#form
+{
+	display:block;
+	font-family:"Verdana",Sans-serif;
+	margin-left: auto;
+	margin-right:auto;
+	width:30%;
+}
+li
+{
+	float: left;
+}
+li a
+{
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:"Verdana",Sans-serif;
+}
+ul
+{
+	list-style-type: none;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    background-color: #404040;
+ 
+
+}
+li a:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: #ff9900;
+}
+</style>
+
+<title>Oda Tanımı Ekranı</title>
+</head>
+<body>
+<div> 
+    
+    <ul> 
+        <li><a  href="anasayfa.xhtml">ANASAYFA</a></li> 
+        <li><a class="active" href="oda_tanimi.xhtml">ODA TANIMI</a></li> 
+    </ul> 
+</div>
+<div>
+<h2>Merhaba </h2>
+<p> Oda eklemek için formu doldurunuz </p>
+</div>
+<form action="otanim" method="post" id="form" >
+<div>
+<br/>
+
+<label for="odano">Oda No:</label>
+<input type="text" value="#{datas.last}" name="odano" id="odano"></input> <br></br>
+<br></br>
+
+<label for="odaadi">Oda Adı:</label>
+<input type="text" name="odaadi" id="odaadi"></input> <br></br>
+
+Oda Tipi:
+<label for="standart"> Standart </label>
+<input type="radio" name="odatipi" id="standart" value="1"></input> <br></br>
+<label for="suit"> Suit </label>
+<input type="radio" name="odatipi" id="suit" value="2"></input> <br></br>
+<label for="kral"> Kral </label>
+<input type="radio" name="odatipi" id="kral" value="3"></input> <br></br>
+<label for="yeni"> Yeni </label>
+<input type="radio" name="odatipi" id="yeni" value="4"></input> <br></br>
+
+<label for="kisino"> Kapasite:</label> <br></br>
+<input type="text" name="kisino" id="kisino"></input> <br></br>
+
+Oda Durumu:
+<label for="dolu"> Dolu </label>
+<input type="radio" name="durum" id="dolu" value="1"></input> <br></br>
+<label for="bos"> Boş </label>
+<input type="radio" name="durum" id="bos" value="2"></input> <br></br>
+<label for="kapali"> Kapalı </label>
+<input type="radio" name="durum" id="kapali" value="3"></input> <br></br>
+
+<input type="submit" value="Kaydet"></input>
+<img src="logo.png" alt="" height="33" width="271" id="logo"></img>
+</div>
+</form>
+
+</body>
+</html>
